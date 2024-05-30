@@ -23,7 +23,6 @@ public class RepositoryController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody CreateRepositoryRequest request) {
-        log.info("Received request to create repository: {}", request);
         this.repositoryService.create(request.getOrganization(), request.getRepository());
     }
 
