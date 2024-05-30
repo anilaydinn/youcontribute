@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.youcontribute.controllers.requests.CreateRepositoryRequest;
 import com.example.youcontribute.controllers.resources.RepositoryResource;
 import com.example.youcontribute.service.RepositoryService;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RestController
 @RequestMapping("/repositories")
 public class RepositoryController {
