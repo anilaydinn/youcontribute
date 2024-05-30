@@ -10,11 +10,17 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor(onConstructor = @__(@JsonCreator))
 public class CreateRepositoryRequest {
     @JsonProperty("organization")
     private String organization;
 
     @JsonProperty("repository")
     private String repository;
+
+    @JsonCreator
+    public CreateRepositoryRequest(@JsonProperty("organization") String organization,
+            @JsonProperty("repository") String repository) {
+        this.organization = organization;
+        this.repository = repository;
+    }
 }

@@ -62,11 +62,10 @@ public class RepositoryControllerTest {
 
         // When
         this.mockMvc.perform(post("/repositories")
-                .content(this.objectMapper.writeValueAsBytes(request))
-                .contentType(MediaType.APPLICATION_JSON))
+                .content(objectMapper.writeValueAsBytes(request))
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .accept(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
-                .andExpect(status().isCreated()); // Expect 201 Created
-
-        // Then
+                .andExpect(status().isCreated());
     }
 }
